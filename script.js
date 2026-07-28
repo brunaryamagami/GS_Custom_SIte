@@ -292,7 +292,7 @@ function setupCarousel() {
   setActiveSlide(0);
   let autoRotate = window.setInterval(() => {
     setActiveSlide(currentSlideIndex() + 1);
-  }, 3200);
+  }, 2600);
 
   if (carouselPrev) {
     carouselPrev.addEventListener("click", () => {
@@ -323,7 +323,7 @@ function setupCarousel() {
       window.clearInterval(autoRotate);
       autoRotate = window.setInterval(() => {
         setActiveSlide(currentSlideIndex() + 1);
-      }, 3200);
+      }, 2600);
     });
   }
 }

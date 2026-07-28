@@ -1,5 +1,7 @@
 # GS Custom
 
+Versao atual: `v0.1`
+
 Primeira base do site institucional/catalogo para a marca GS Custom, focada em carrinhos de colecao.
 
 ## O que esta pronto
@@ -15,6 +17,12 @@ Primeira base do site institucional/catalogo para a marca GS Custom, focada em c
 ## Como abrir
 
 Basta abrir [index.html](./index.html) no navegador.
+
+## Versionamento
+
+- versao atual registrada em `VERSION`
+- historico resumido em `CHANGELOG.md`
+- `v1.0` fica reservado para a primeira publicacao online
 
 ## Proximos passos sugeridos
 

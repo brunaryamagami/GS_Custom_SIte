@@ -92,12 +92,14 @@ img {
   border-bottom: 1px solid var(--line);
   background: rgba(7, 7, 9, 0.88);
   backdrop-filter: blur(16px);
+  overflow: visible;
 }
 
 .header-inner {
   width: min(calc(100% - 28px), var(--site-width));
   margin: 0 auto;
   min-height: 78px;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -175,6 +177,10 @@ img {
   position: relative;
 }
 
+.nav-dropdown-catalog {
+  position: static;
+}
+
 .nav-dropdown-toggle {
   display: inline-flex;
   align-items: center;
@@ -196,36 +202,43 @@ img {
 
 .nav-dropdown-panel {
   position: absolute;
-  top: calc(100% + 5px);
-  left: 50%;
-  width: 100vw;
-  transform: translateX(-50%);
+  top: 100%;
+  left: 0;
+  width: 100%;
+  transform: none;
   display: none;
-  padding: 14px 0 16px;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 12px 0 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  background: rgba(82, 82, 85, 0.98);
-  box-shadow: var(--shadow);
+  background: rgba(88, 88, 90, 0.98);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.16);
 }
 
 .nav-dropdown.is-open .nav-dropdown-panel {
   display: block;
 }
 
+@media (min-width: 921px) {
+  .nav-dropdown-catalog:hover .nav-dropdown-panel,
+  .nav-dropdown-catalog:focus-within .nav-dropdown-panel {
+    display: block;
+  }
+}
+
 .nav-dropdown-grid {
-  width: min(calc(100% - 28px), var(--site-width));
-  margin: 0 auto;
+  width: 100%;
+  margin: 0;
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 12px 26px;
+  gap: 8px 22px;
 }
 
 .nav-dropdown-panel a {
-  padding: 2px 0;
+  padding: 3px 0;
   border-radius: 0;
   color: #ffffff;
   font-family: var(--display-font);
-  font-size: 0.98rem;
+  font-size: 0.95rem;
   letter-spacing: 0.01em;
   text-transform: none;
   font-weight: 700;
@@ -246,7 +259,7 @@ img {
 
 .carousel-track {
   position: relative;
-  min-height: calc(82vh - 78px);
+  min-height: calc(76vh - 78px);
 }
 
 .carousel-slide {
@@ -258,7 +271,7 @@ img {
 }
 
 .slide-content {
-  min-height: calc(82vh - 78px);
+  min-height: calc(76vh - 78px);
   overflow: hidden;
   background: #09090b;
 }
@@ -339,11 +352,30 @@ h1,
 .slide-brand-full {
   position: relative;
   display: flex;
-  align-items: end;
+  align-items: center;
   padding: clamp(28px, 4vw, 54px);
   background:
     linear-gradient(180deg, rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.45)),
     linear-gradient(135deg, #0b0b0d 0%, #14151a 60%, #09090b 100%);
+}
+
+.slide-brand-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.slide-brand-full::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(7, 7, 9, 0.92) 0%, rgba(7, 7, 9, 0.82) 28%, rgba(7, 7, 9, 0.4) 54%, rgba(7, 7, 9, 0.18) 100%),
+    linear-gradient(180deg, rgba(7, 7, 9, 0.15), rgba(7, 7, 9, 0.28));
+  pointer-events: none;
 }
 
 .slide-brand-logo {
@@ -352,22 +384,25 @@ h1,
   left: clamp(20px, 3vw, 34px);
   width: clamp(130px, 16vw, 220px);
   height: auto;
+  z-index: 1;
 }
 
 .slide-brand-copy {
-  max-width: min(1200px, 78vw);
-  padding-top: 78px;
+  position: relative;
+  z-index: 1;
+  max-width: min(1380px, 88vw);
+  padding-top: 30px;
 }
 
 .slide-brand-copy h1 {
-  max-width: 12ch;
+  max-width: 21ch;
   margin: 0;
   font-family: var(--street-font);
-  font-size: clamp(2.5rem, 5.3vw, 5.1rem);
-  letter-spacing: 0.02em;
-  line-height: 0.92;
+  font-size: clamp(2rem, 4vw, 4rem);
+  letter-spacing: 0.01em;
+  line-height: 0.96;
   text-transform: uppercase;
-  text-wrap: stable;
+  text-wrap: balance;
 }
 
 .slide-photo {
@@ -376,7 +411,7 @@ h1,
 
 .slide-photo img {
   width: 100%;
-  height: calc(82vh - 78px);
+  height: calc(76vh - 78px);
   object-fit: cover;
   object-position: center;
   display: block;
@@ -875,13 +910,22 @@ h1,
   }
 
   .slide-content {
-    min-height: calc(68vh - 72px);
+    min-height: calc(64vh - 72px);
   }
 
   h1,
   .slide-copy h2,
   .page-hero h1 {
     font-size: clamp(2rem, 10vw, 3.5rem);
+  }
+
+  .slide-brand-copy {
+    max-width: 100%;
+  }
+
+  .slide-brand-copy h1 {
+    max-width: 12ch;
+    font-size: clamp(2rem, 9vw, 3.35rem);
   }
 
   .carousel-controls {

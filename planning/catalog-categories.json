@@ -1,0 +1,108 @@
+{
+  "brand": "Marcos 3D",
+  "catalogGoal": "Catalogo com estrutura de loja, sem checkout no primeiro momento",
+  "primaryCategories": [
+    {
+      "id": "rodas",
+      "label": "Rodas",
+      "description": "Modelos de rodas para carrinhos de colecao em diferentes estilos, tamanhos e acabamentos.",
+      "subcategories": [
+        "Rodas esportivas",
+        "Rodas classicas",
+        "Rodas custom",
+        "Rodas off-road",
+        "Rodas especiais"
+      ]
+    },
+    {
+      "id": "pneus",
+      "label": "Pneus",
+      "description": "Pneus para complementar os conjuntos de rodas e melhorar o realismo dos modelos.",
+      "subcategories": [
+        "Pneus slick",
+        "Pneus de rua",
+        "Pneus off-road",
+        "Pneus baixos",
+        "Pneus especiais"
+      ]
+    },
+    {
+      "id": "conjuntos",
+      "label": "Conjuntos",
+      "description": "Kits prontos com roda e pneu para facilitar a escolha do cliente.",
+      "subcategories": [
+        "Kit roda + pneu",
+        "Kit por estilo",
+        "Kit por escala",
+        "Kit edicao especial"
+      ]
+    },
+    {
+      "id": "modificacoes",
+      "label": "Modificacoes",
+      "description": "Pecas e solucoes para personalizar o carrinho e criar novas configuracoes.",
+      "subcategories": [
+        "Adaptacoes",
+        "Alargadores",
+        "Rebaixamento",
+        "Conversoes",
+        "Acessorios tecnicos"
+      ]
+    },
+    {
+      "id": "personalizados",
+      "label": "Personalizados",
+      "description": "Projetos sob medida para clientes que procuram algo especifico ou exclusivo.",
+      "subcategories": [
+        "Projeto sob encomenda",
+        "Replica personalizada",
+        "Peca exclusiva",
+        "Ajuste para modelo especifico"
+      ]
+    }
+  ],
+  "supportingFilters": [
+    "Escala",
+    "Marca do carrinho",
+    "Modelo compativel",
+    "Estilo da roda",
+    "Cor",
+    "Acabamento",
+    "Novidades",
+    "Destaques"
+  ],
+  "productCardFields": [
+    "Nome",
+    "Imagem principal",
+    "Categoria",
+    "Preco ou sob consulta",
+    "Escala",
+    "Compatibilidade resumida",
+    "Botao pedir no WhatsApp"
+  ],
+  "productPageFields": [
+    "Nome",
+    "Galeria de imagens",
+    "Preco ou faixa de preco",
+    "Descricao curta",
+    "Descricao detalhada",
+    "Categoria",
+    "Subcategoria",
+    "Escala",
+    "Compatibilidade",
+    "Material",
+    "Acabamento",
+    "Cores disponiveis",
+    "Prazo de producao",
+    "Observacoes",
+    "Produtos relacionados"
+  ],
+  "launchSuggestion": {
+    "startWith": [
+      "Rodas",
+      "Conjuntos",
+      "Modificacoes"
+    ],
+    "reason": "Essas categorias refletem melhor o foco atual do negocio e ajudam o catalogo a entrar no ar com mais clareza."
+  }
+}
