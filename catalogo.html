@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Catalogo | GS 3D</title>
+    <meta
+      name="description"
+      content="Catalogo inicial de rodas, pneus e modificacoes em impressao 3D para carrinhos de colecao."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="catalogo">
+    <header class="site-header" id="topo">
+      <div class="header-inner">
+        <a class="brand" href="index.html" aria-label="GS 3D">
+          <img class="brand-logo logo-dark" src="assets/logo-dark.png.jpeg" alt="Logo GS 3D" />
+          <img class="brand-logo logo-light" src="assets/logo-light.png.jpeg" alt="Logo GS 3D" />
+        </a>
+
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-menu">
+          Menu
+        </button>
+
+        <nav class="primary-nav" id="primary-menu" aria-label="Navegacao principal">
+          <a href="index.html">Home</a>
+          <div class="nav-dropdown nav-dropdown-catalog">
+            <button
+              class="nav-dropdown-toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="catalog-menu"
+            >
+              Catalogo
+            </button>
+
+            <div class="nav-dropdown-panel nav-dropdown-panel-wide" id="catalog-menu" role="menu">
+              <div class="nav-dropdown-grid">
+                <a href="catalogo.html?categoria=rodas" role="menuitem">Rodas</a>
+                <a href="catalogo.html?categoria=acessorios" role="menuitem">Acessorios</a>
+                <a href="catalogo.html?categoria=gasser" role="menuitem">Gasser</a>
+                <a href="catalogo.html?categoria=miniaturas" role="menuitem">Miniaturas</a>
+                <a href="catalogo.html?categoria=velozes-e-furiosos" role="menuitem">Velozes e Furiosos</a>
+                <a href="catalogo.html?categoria=lowrider" role="menuitem">Lowrider</a>
+                <a href="catalogo.html?categoria=brclassics" role="menuitem">BrClassics</a>
+                <a href="catalogo.html?categoria=edicao-limitada" role="menuitem">Edicao Limitada</a>
+              </div>
+            </div>
+          </div>
+
+          <a href="#catalogo-grid">Produtos</a>
+          <a href="#topo">Topo</a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="site-shell">
+      <header class="hero-compact">
+        <div class="page-hero">
+          <p class="eyebrow">Catalogo GS 3D</p>
+          <h1>Uma vitrine com energia racing pronta para receber os produtos reais.</h1>
+          <p class="hero-text">
+            Aqui o visitante navega por categorias, entende compatibilidade e chega mais preparado ao
+            contato. Por enquanto, os cards abaixo funcionam como modelo estrutural do catalogo.
+          </p>
+        </div>
+      </header>
+
+      <main>
+        <section class="section catalog-layout">
+          <aside class="catalog-sidebar">
+            <div class="sidebar-card">
+              <p class="eyebrow">Categorias</p>
+              <div class="sidebar-links" id="sidebar-categories"></div>
+            </div>
+
+            <div class="sidebar-card">
+              <p class="eyebrow">Filtros previstos</p>
+              <ul class="sidebar-list">
+                <li>Escala</li>
+                <li>Modelo compativel</li>
+                <li>Estilo da roda</li>
+                <li>Acabamento</li>
+                <li>Novidades</li>
+              </ul>
+            </div>
+
+            <div class="sidebar-card">
+              <p class="eyebrow">Pedido</p>
+              <p>
+                Nessa fase, o catalogo serve para apresentar as pecas com clareza. A compra continua no
+                atendimento direto.
+              </p>
+            </div>
+          </aside>
+
+          <div class="catalog-main" id="catalogo-grid">
+            <div class="filter-bar">
+              <button class="filter-pill is-active" type="button" data-filter="todos">Todos</button>
+              <button class="filter-pill" type="button" data-filter="rodas">Rodas</button>
+              <button class="filter-pill" type="button" data-filter="acessorios">Acessorios</button>
+              <button class="filter-pill" type="button" data-filter="lowrider">Lowrider</button>
+              <button class="filter-pill" type="button" data-filter="miniaturas">Miniaturas</button>
+              <button class="filter-pill" type="button" data-filter="brclassics">BrClassics</button>
+              <button class="filter-pill" type="button" data-filter="edicao-limitada">Edicao Limitada</button>
+            </div>
+
+            <div class="product-grid" id="product-grid"></div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

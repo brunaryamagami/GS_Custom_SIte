@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GS 3D | Rodas e Modificacoes para Carrinhos de Colecao</title>
+    <meta
+      name="description"
+      content="Catalogo GS 3D com rodas, kits e modificacoes para carrinhos de colecao."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="home">
+    <header class="site-header" id="topo">
+      <div class="header-inner">
+        <a class="brand" href="#topo" aria-label="GS 3D">
+          <img class="brand-logo logo-dark" src="assets/logo-dark.png.jpeg" alt="Logo GS 3D" />
+          <img class="brand-logo logo-light" src="assets/logo-light.png.jpeg" alt="Logo GS 3D" />
+        </a>
+
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-menu">
+          Menu
+        </button>
+
+        <nav class="primary-nav" id="primary-menu" aria-label="Navegacao principal">
+          <a href="index.html" aria-current="page">Home</a>
+          <div class="nav-dropdown nav-dropdown-catalog">
+            <button
+              class="nav-dropdown-toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="catalog-menu"
+            >
+              Catalogo
+            </button>
+
+            <div class="nav-dropdown-panel nav-dropdown-panel-wide" id="catalog-menu" role="menu">
+              <div class="nav-dropdown-grid">
+                <a href="catalogo.html?categoria=rodas" role="menuitem">Rodas</a>
+                <a href="catalogo.html?categoria=acessorios" role="menuitem">Acessorios</a>
+                <a href="catalogo.html?categoria=gasser" role="menuitem">Gasser</a>
+                <a href="catalogo.html?categoria=miniaturas" role="menuitem">Miniaturas</a>
+                <a href="catalogo.html?categoria=velozes-e-furiosos" role="menuitem">Velozes e Furiosos</a>
+                <a href="catalogo.html?categoria=lowrider" role="menuitem">Lowrider</a>
+                <a href="catalogo.html?categoria=brclassics" role="menuitem">BrClassics</a>
+                <a href="catalogo.html?categoria=edicao-limitada" role="menuitem">Edicao Limitada</a>
+              </div>
+            </div>
+          </div>
+
+          <a href="#selecionados">Selecionados</a>
+          <a href="#rodape">Contato</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="home-stage">
+        <div class="carousel" aria-label="Banners principais">
+          <div class="carousel-track" id="home-carousel-track">
+            <article class="carousel-slide is-active" data-slide="0">
+              <div class="slide-content slide-brand-full">
+                <img class="slide-brand-logo logo-dark" src="assets/logo-dark.png.jpeg" alt="Logo GS 3D" />
+              <img class="slide-brand-logo logo-light" src="assets/logo-light.png.jpeg" alt="Logo GS 3D" />
+                <div class="slide-brand-copy">
+                  <h1>Rodas, kits e modificacoes para quem leva miniatura a serio.</h1>
+                  <a class="button button-primary" href="catalogo.html">Ver catalogo</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="carousel-slide" data-slide="1">
+              <div class="slide-content slide-photo">
+                <img src="assets/base/banner-supra-purple.png" alt="Miniatura roxa customizada" />
+              </div>
+            </article>
+
+            <article class="carousel-slide" data-slide="2">
+              <div class="slide-content slide-photo">
+                <img src="assets/base/banner-diorama-red.png" alt="Miniatura vermelha em diorama" />
+              </div>
+            </article>
+
+            <article class="carousel-slide" data-slide="3">
+              <div class="slide-content slide-photo">
+                <img src="assets/base/banner-bugatti.png" alt="Miniatura branca e preta customizada" />
+              </div>
+            </article>
+          </div>
+
+          <div class="carousel-controls">
+            <button class="carousel-arrow" type="button" data-carousel-prev aria-label="Banner anterior">
+              &lsaquo;
+            </button>
+
+            <div class="carousel-dots" aria-label="Indicadores do carrossel">
+              <button class="carousel-dot is-active" type="button" data-slide-to="0" aria-label="Slide 1"></button>
+              <button class="carousel-dot" type="button" data-slide-to="1" aria-label="Slide 2"></button>
+              <button class="carousel-dot" type="button" data-slide-to="2" aria-label="Slide 3"></button>
+              <button class="carousel-dot" type="button" data-slide-to="3" aria-label="Slide 4"></button>
+            </div>
+
+            <button class="carousel-arrow" type="button" data-carousel-next aria-label="Proximo banner">
+              &rsaquo;
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="featured-products" id="selecionados">
+        <div class="site-shell">
+          <div class="section-bar">
+            <div>
+              <p class="eyebrow">Selecionados da GS 3D</p>
+              <h2>Seis destaques para colocar o catalogo na frente logo de cara.</h2>
+            </div>
+            <a class="section-link" href="catalogo.html">Ver catalogo completo</a>
+          </div>
+
+          <div class="product-grid" id="home-product-grid"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" id="rodape">
+      <div class="site-shell footer-main">
+        <div class="footer-brand">
+          <span class="brand-logo-frame footer-logo-frame">
+            <img class="brand-logo logo-dark" src="assets/logo-dark.png.jpeg" alt="Logo GS 3D" />
+            <img class="brand-logo logo-light" src="assets/logo-light.png.jpeg" alt="Logo GS 3D" />
+          </span>
+          <p>
+            Catalogo de rodas, kits e modificacoes para carrinhos de colecao, com foco em visual forte,
+            atendimento direto e crescimento gradual do acervo.
+          </p>
+        </div>
+
+        <div class="footer-column">
+          <h3>Navegacao</h3>
+          <a href="index.html">Home</a>
+          <a href="catalogo.html">Catalogo</a>
+          <a href="catalogo.html?categoria=rodas">Rodas</a>
+          <a href="catalogo.html?categoria=personalizados">Personalizados</a>
+        </div>
+
+        <div class="footer-column">
+          <h3>Contato</h3>
+          <a href="https://wa.me/5500000000000" target="_blank" rel="noreferrer">WhatsApp</a>
+          <a href="https://instagram.com/" target="_blank" rel="noreferrer">Instagram</a>
+          <a href="mailto:contato@gscustom.com.br">contato@gscustom.com.br</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="site-shell footer-bottom-inner">
+          <span>&copy; 2026 GS 3D</span>
+          <span>gscustom.com.br</span>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
