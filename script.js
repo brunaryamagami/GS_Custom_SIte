@@ -328,9 +328,38 @@ function setupCarousel() {
   }
 }
 
+function setupThemeToggle() {
+  const toggle = document.querySelector(".theme-toggle");
+  if (!toggle) return;
+
+  const stored = localStorage.getItem("theme");
+  if (stored) {
+    document.documentElement.setAttribute("data-theme", stored);
+  }
+
+  function updateLabel() {
+    const current = document.documentElement.getAttribute("data-theme");
+    const isDark = current === "dark" || (!current && window.matchMedia("(prefers-color-scheme: dark)").matches);
+    toggle.textContent = isDark ? "☀️" : "🌙";
+    toggle.setAttribute("aria-label", isDark ? "Tema claro" : "Tema escuro");
+  }
+
+  updateLabel();
+
+  toggle.addEventListener("click", () => {
+    const current = document.documentElement.getAttribute("data-theme");
+    const isDark = current === "dark" || (!current && window.matchMedia("(prefers-color-scheme: dark)").matches);
+    const next = isDark ? "light" : "dark";
+    document.documentElement.setAttribute("data-theme", next);
+    localStorage.setItem("theme", next);
+    updateLabel();
+  });
+}
+
 renderHomeProducts();
 renderCatalogProducts();
 attachCatalogFilters();
 toggleMenu();
 toggleDropdowns();
 setupCarousel();
+setupThemeToggle();
