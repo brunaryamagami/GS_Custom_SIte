@@ -121,7 +121,6 @@ const sidebarCategories = document.querySelector("#sidebar-categories");
 const filterButtons = Array.from(document.querySelectorAll("[data-filter]"));
 const menuToggle = document.querySelector(".menu-toggle");
 const primaryMenu = document.querySelector(".primary-nav");
-const dropdownToggles = Array.from(document.querySelectorAll(".nav-dropdown-toggle"));
 const carouselTrack = document.querySelector("#home-carousel-track");
 const carouselPrev = document.querySelector("[data-carousel-prev]");
 const carouselNext = document.querySelector("[data-carousel-next]");
@@ -227,30 +226,11 @@ function toggleMenu() {
     const isOpen = primaryMenu.classList.toggle("is-open");
     menuToggle.setAttribute("aria-expanded", String(isOpen));
   });
-}
 
-function toggleDropdowns() {
-  dropdownToggles.forEach((toggle) => {
-    toggle.addEventListener("click", () => {
-      const wrapper = toggle.closest(".nav-dropdown");
-      if (!wrapper) {
-        return;
-      }
-
-      const isOpen = wrapper.classList.toggle("is-open");
-      toggle.setAttribute("aria-expanded", String(isOpen));
-    });
-  });
-
-  document.addEventListener("click", (event) => {
-    dropdownToggles.forEach((toggle) => {
-      const wrapper = toggle.closest(".nav-dropdown");
-      if (!wrapper || wrapper.contains(event.target)) {
-        return;
-      }
-
-      wrapper.classList.remove("is-open");
-      toggle.setAttribute("aria-expanded", "false");
+  primaryMenu.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      primaryMenu.classList.remove("is-open");
+      menuToggle.setAttribute("aria-expanded", "false");
     });
   });
 }
@@ -360,6 +340,5 @@ renderHomeProducts();
 renderCatalogProducts();
 attachCatalogFilters();
 toggleMenu();
-toggleDropdowns();
 setupCarousel();
 setupThemeToggle();
